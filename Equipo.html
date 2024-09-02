@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo SN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            background-color:#190232;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 80rem;
+        }
+
+        .cols {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .col {
+            width: calc(25% - 2rem);
+            margin: 1rem;
+            cursor: pointer;
+
+        }
+
+        .container {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+        }
+
+        .front,
+        .back {
+            background-size: cover;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            background-position: center;
+            -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            text-align: center;
+            min-height: 280px;
+            box-shadow: 0 0 10px solid blue;
+
+            height: auto;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .back {
+            background: #cedce7;
+            background: -webkit-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+            background: -o-linear-gradient(45deg, #cedce7 0%, #596a72 100%);
+            background: linear-gradient(45deg, #5615cf 0%, #596a72 100%);
+        }
+
+        .front:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            content: '';
+            display: block;
+            opacity: .6;
+            background-color: #000;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .container:hover .front,
+        .container:hover .back {
+            -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .inner {
+            -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+            top: 70%;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 1px solid transparent;
+            -webkit-perspective: inherit;
+            perspective: inherit;
+            z-index: 2;
+        }
+
+        .inner-1 {
+            -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+            top: 50%;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            outline: 1px solid transparent;
+            -webkit-perspective: inherit;
+            perspective: inherit;
+            z-index: 2;
+        }
+
+        .container .back {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .container .front {
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .container:hover .back {
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .container:hover .front {
+            -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .front .inner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .front .inner p:after {
+            content: '';
+            width: 4rem;
+            height: 2px;
+            position: absolute;
+            background: #C6D4DF;
+            display: block;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: -.75rem;
+        }
+
+        .front .inner span {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Montserrat';
+            font-weight: 300;
+        }
+
+        @media screen and (max-width: 64rem) {
+            .col {
+                width: calc(33.333333% - 2rem);
+            }
+        }
+
+        @media screen and (max-width: 48rem) {
+            .col {
+                width: calc(50% - 2rem);
+            }
+        }
+
+        @media screen and (max-width: 32rem) {
+            .col {
+                width: 100%;
+                margin: 0 0 2rem 0;
+            }
+        }
+
+        /* -- YouTube Link Styles -- */
+
+        #source-link {
+            top: 60px;
+        }
+
+        #source-link>i {
+            color: rgb(94, 106, 210);
+        }
+
+        #yt-link {
+            top: 10px;
+        }
+
+        #yt-link>i {
+            color: rgb(219, 31, 106);
+
+        }
+
+        .meta-link {
+            align-items: center;
+            backdrop-filter: blur(3px);
+            background-color: rgba(216, 213, 213, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: inline-flex;
+            gap: 5px;
+            left: 10px;
+            padding: 10px 20px;
+            position: fixed;
+            text-decoration: none;
+            transition: background-color 600ms, border-color 600ms;
+            z-index: 10000;
+        }
+
+        .meta-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .meta-link>i,
+        .meta-link>span {
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .meta-link>span {
+            color: white;
+            font-family: "Rubik", sans-serif;
+            transition: color 600ms;
+        }
+
+        .contact {
+    min-height: auto;
+    padding-bottom: -10rem;
+}
+
+.contact h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #5615cf;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus {
+    width: 100%;
+}
+
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+}
+
+.contact form .btn-box.btns .btn {
+    cursor: pointer;
+}
+
+section {
+    min-height: 100vh;
+    padding: 3rem 6% -2rem;
+}
+
+.heading {
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: white;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Equi <span>po SN!</span><span style="--i:1;"></span></h2>
+    </section>
+
+<section>
+    <div class="wrapper">
+
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Brand.jpeg)">
+                        <div class="inner">
+                            <p>Brandon Michael </p>
+                            <span>Arizmendi Escareño</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad auditiva Seña Conversa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/yazmin.jpeg)">
+                        <div class="inner">
+                            <p>Evelyn Yazmin</p>
+                            <span>Castro Cortes</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad visual TecBraille</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Jeorge.jpg)">
+                        <div class="inner">
+                            <p>Jorge Manuel</p>
+                            <span>Coronado Escobar</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad auditiva Web Voz , Lan Love y pagina web Software Network</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/frank.jpeg)">
+                        <div class="inner">
+                            <p>Francisco Manuel</p>
+                            <span>Cruz Avila</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad motora Electronology</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Jose\ Juan.jpg)">
+                        <div class="inner">
+                            <p>Jose Juan</p>
+                            <span>Gallegos Suarez</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad auditiva Web Voz y Pagina web Sofware Network</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Nao.webp)">
+                        <div class="inner">
+                            <p>Naomi</p>
+                            <span>Hernandez Bautista</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad visual daltonico ColorBlind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Jerrry.jpeg)">
+                        <div class="inner">
+                            <p>Gerardo</p>
+                            <span>Meneses Bustamante</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad visual Daltonico Chromatic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/byron.jpeg)">
+                        <div class="inner">
+                            <p>Byron Obed</p>
+                            <span>Pineda Peña</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador de Chat Bot</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Perfil.webp)">
+                        <div class="inner">
+                            <p>Stephania</p>
+                            <span>Rodriguez Magaña</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad auditiva Seña Conversa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/Sam.webp)">
+                        <div class="inner">
+                            <p>Oscar Samuel</p>
+                            <span>Rodriguez Marin</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad visual Daltonico Chromatic</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(css/img/perfil/i.webp)">
+                        <div class="inner">
+                            <p>Maria Isabel</p>
+                            <span>Sanchez Gonzalez</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner-1">
+                            <p>Desarrollador del sistema para discapacidad auditiva Tell Me X</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

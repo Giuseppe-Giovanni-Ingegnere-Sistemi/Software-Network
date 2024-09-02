@@ -1,0 +1,38 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+    height: 100%;
+    padding: 0;
+}
+
+.contacts-header, .chat-header {
+    background-color: #6a0dad; /* Morado oscuro */
+    color: white;
+}
+
+.chat-messages {
+    overflow-y: auto;
+    flex-grow: 1;
+    background-color: #f3e5f5; /* Morado claro */
+}
+
+.chat-messages .message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 75%;
+}
+
+.chat-messages .message.self {
+    background-color: #8a2be2; /* Morado intermedio */
+    color: white;
+    margin-left: auto;
+}
+
+.chat-messages .message.other {
+    background-color: #e1bee7; /* Morado muy claro */
+}

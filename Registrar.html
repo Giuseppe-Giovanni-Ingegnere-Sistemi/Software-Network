@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Network</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
+</head>
+
+<body>
+
+    <div class="login-light"></div>
+    <div class="login-box">
+        <form action="backend/Registrar.php" method="post">
+
+            <input type="checkbox" class="input-check" id="input-check">
+            <label for="input-check" class="toggle">
+                <span class="text off">off</span>
+                <span class="text on">on</span>
+            </label>
+            <div class="light"></div>
+
+            <h2>Crear Cuenta</h2>
+
+            <div class="input-box">
+                <input name="Nombre" type="text" required title="Coloca tu nombre">
+
+                <span class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </span>
+                <label>Nombre</label>
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-box">
+                <input name="Apellido" type="text" required>
+
+                <span class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </span>
+                <label>Apellido</label>
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-box">
+                <input name="Email" type="email" required title="Ingresa tu correo">
+
+                <span class="icon">
+                    <ion-icon name="mail"></ion-icon>
+                </span>
+                <label>Email</label>
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-box">
+                <input name="Telefono" type="text" required title="Ingresa tu número celular">
+
+                <span class="icon">
+                    <ion-icon name="phone-portrait"></ion-icon>
+                </span>
+                <label>Número celular</label>
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-box">
+                <input name="Contraseña" type="password" required title="Ingresa tu contraseña">
+
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <label>Contraseña</label>
+                <div class="input-line"></div>
+            </div>
+
+            <div class="input-box">
+                <input name="" type="password" required title="Repite tu contraseña">
+
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <label>Repetir contraseña</label>
+                <div class="input-line"></div>
+            </div>
+
+            <button type="submit">Crear cuenta</button>
+
+        </form>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

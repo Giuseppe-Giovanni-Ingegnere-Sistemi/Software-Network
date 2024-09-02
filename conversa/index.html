@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5; /* Color de fondo */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Toma el 100% del alto de la ventana */
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #1877f2; /* Color azul similar a Facebook */
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            border-color: #dcdcdc; /* Color del borde */
+        }
+
+        .btn-primary {
+            background-color: #1877f2; /* Color azul similar a Facebook */
+            border-color: #1877f2;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #166fe5; /* Cambio de color al pasar el cursor */
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #1877f2; /* Color azul similar a Facebook */
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline; /* Subrayado al pasar el cursor */
+        }
+
+        /* Estilos para el banner de recordatorio */
+        .reminder-banner {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8d7da; /* Color de fondo rojo */
+            color: #721c24; /* Color de texto rojo oscuro */
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form action="php/login.php" method="post">
+            <div class="mb-3">
+                <input name="correo" type="text" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+            <div class="mb-3">
+                <input name="clave" type="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </form>
+        <div class="register-link">
+            <a href="Registrarse.html">Crear cuenta nueva</a>
+        </div>
+        <!-- Banner de recordatorio -->
+        <div class="reminder-banner" id="reminderBanner">
+            Recuerda cambiar tu contraseña al menos una vez cada 90 días.
+        </div>
+    </div>
+
+    <!-- Enlace a los scripts de Bootstrap (jQuery y Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para mostrar mensajes aleatorios en el banner de recordatorio -->
+    <script>
+        // Arreglo de mensajes de recordatorio
+        const reminderMessages = [
+            "Recuerda cambiar tu contraseña al menos una vez cada 90 días.",
+            "Protege tu cuenta. Cambia tu contraseña periódicamente.",
+            "¡Es importante mantener tu contraseña segura y actualizada!",
+            "Una contraseña segura es clave para tu seguridad en línea."
+        ];
+
+        // Función para obtener un mensaje aleatorio del arreglo
+        function getRandomReminder() {
+            const randomIndex = Math.floor(Math.random() * reminderMessages.length);
+            return reminderMessages[randomIndex];
+        }
+
+        // Actualizar el texto del banner de recordatorio con un mensaje aleatorio al cargar la página
+        window.addEventListener('load', () => {
+            const reminderBanner = document.getElementById('reminderBanner');
+            if (reminderBanner) {
+                reminderBanner.textContent = getRandomReminder();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

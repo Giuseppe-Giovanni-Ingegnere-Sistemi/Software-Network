@@ -1,0 +1,90 @@
+.boton_perso {
+    background-color: black;
+    color: rgb(84, 240, 118);
+    font-family: Arial;
+    font-size: larger;
+    border-radius: 15px;
+}
+
+.barra {
+
+    background-color: rgb(0, 238, 255) ;
+    color: black;
+    font-size: 24px;
+
+}
+
+.contenedor_custom{
+    background-color: blue;
+}
+.pcustom{
+
+    font-size: 24px;
+    color: blue;
+}
+
+.containerIn{
+    background-color: rgba(17, 1, 1, 0.25);
+    border-radius: 10px;
+    height: 600px;
+    width: 500px;
+}
+
+body{
+    background-color: rgb(182, 199, 235);
+
+    font-family: Open Sans;
+}
+#result{
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 #bbb;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 25px;
+}
+button{
+    background-color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 240px;
+    left: 50%;
+}
+
+
+.btn-custom{
+    background-color: black;
+    border-color: transparent;
+    color: white;
+}
+.btn-custom:hover{
+    background-color: black;
+    color: white;
+    border-color: transparent;
+
+}
+<style>
+    .btn-custom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 10px;
+    }
+.btn-secundary{
+   
+        background-color: #4c4eaf; /* Color de fondo */
+        border: none; /* Sin borde */
+        color: white; /* Color del texto */
+        padding: 20 px 100px; /* Espacio interno */
+        text-align: center; /* Alineación del texto */
+        text-decoration: ; /* Sin subrayado */
+      
+        font-size: 40px; /* Tamaño de fuente */
+        margin: 4px 2px; /* Márgenes */
+        cursor: pointer; /* Cambio de cursor al pasar el ratón */
+        border-radius: 8px; /* Radio de borde */
+}

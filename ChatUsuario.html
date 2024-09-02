@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Usuarios</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesChatUsuario.css">
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-3 border-right px-0">
+                <div class="contacts-header p-3">
+                    <h4>Contactos</h4>
+                </div>
+                <ul class="list-group list-group-flush" id="contactList">
+                    <li class="list-group-item">Contacto 1</li>
+                    <li class="list-group-item">Contacto 2</li>
+                    <li class="list-group-item">Contacto 3</li>
+                </ul>
+            </div>
+            <div class="col-md-9 px-0 d-flex flex-column">
+                <div class="chat-header p-3 border-bottom">
+                    <h4 id="chatHeader">Chat</h4>
+                </div>
+                <div class="chat-messages flex-grow-1 p-3" id="chatMessages"></div>
+                <div class="chat-input p-3 border-top">
+                    <div class="input-group">
+                        <input type="text" id="messageInput" class="form-control" placeholder="Escribe un mensaje...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="sendButton">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/ChatUsuarios.js"></script>
+</body>
+
+</html>
