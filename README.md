@@ -2,15 +2,6 @@
 
 **Software Network** es un proyecto escolar diseñado para proporcionar una plataforma completa con funcionalidades avanzadas. La aplicación incluye un sistema de productos con carrito de compras y opciones de pago, además de páginas accesibles para personas con discapacidades auditivas, visuales y de señas. Este proyecto también utiliza cookies para mejorar la experiencia del usuario.
 
-## Tabla de Contenidos
-
-- [Descripción del Proyecto](#descripción-del-proyecto)
-- [Características](#características)
-- [Uso](#uso)
-- [Conócelo](#conócelo)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
-
 ## Descripción del Proyecto
 
 Software Network es una plataforma web diseñada con el objetivo de ofrecer una experiencia de usuario completa y accesible. Este proyecto incluye:
